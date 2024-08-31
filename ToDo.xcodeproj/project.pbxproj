@@ -15,6 +15,7 @@
 		6001B8FE2C7A6CCF00600A78 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001B8FD2C7A6CCF00600A78 /* AddView.swift */; };
 		6001B9012C7A8CBB00600A78 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001B9002C7A8CBB00600A78 /* ItemModel.swift */; };
 		6001B9042C7B0E5600600A78 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001B9032C7B0E5600600A78 /* ListViewModel.swift */; };
+		6001B9062C83B82200600A78 /* NoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6001B9052C83B82200600A78 /* NoItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		6001B8FD2C7A6CCF00600A78 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		6001B9002C7A8CBB00600A78 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		6001B9032C7B0E5600600A78 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		6001B9052C83B82200600A78 /* NoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				6001B8F92C7A62E200600A78 /* ListView.swift */,
+				6001B9052C83B82200600A78 /* NoItemView.swift */,
 				6001B8FB2C7A659200600A78 /* ListRowView.swift */,
 				6001B8FD2C7A6CCF00600A78 /* AddView.swift */,
 			);
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6001B9012C7A8CBB00600A78 /* ItemModel.swift in Sources */,
+				6001B9062C83B82200600A78 /* NoItemView.swift in Sources */,
 				6001B8FE2C7A6CCF00600A78 /* AddView.swift in Sources */,
 				6001B9042C7B0E5600600A78 /* ListViewModel.swift in Sources */,
 				6001B8FA2C7A62E200600A78 /* ListView.swift in Sources */,

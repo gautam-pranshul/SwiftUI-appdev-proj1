@@ -8,7 +8,7 @@
 import Foundation
 
 //immutable struct thats why all these are let constants
-struct ItemModel: Identifiable{
+struct ItemModel: Identifiable, Codable {
     let id: String
     let title : String
     let iscomplete : Bool
