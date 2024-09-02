@@ -38,6 +38,6 @@ This project involves building a simple yet fully functional to-do list app usin
 
 ## Conclusion
 
-This project demonstrates how to implement the MVVM architecture in a SwiftUI app, following best practices for building a simple to-do list application. It includes building views, creating models, managing data with ViewModels, and persisting data with UserDefaults. Additionally, the app is optimized for various devices and modes, ensuring a polished user experience. Finally, it prepares the app for deployment by adding a launch screen and an app icon, making it ready for submission to the App Store. This project serves as a comprehensive example for creating a functional and professional SwiftUI application.
+Created a professional swiftUI application, implemented a clean MVVM architecture with safe coding practices, handled all CRUD operations in the view model, and optimized the app for both light and dark modes, iPad, and horizontal orientation, adding a polished app icon and launch screen making it App Store ready.
 
 
