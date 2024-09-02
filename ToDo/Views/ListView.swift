@@ -9,12 +9,14 @@ import SwiftUI
 
 struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
+    let secondaryAccentColor = Color("secondaryAccentColor")
 
+    
     var body: some View {
         ZStack{
             if listViewModel.items.isEmpty{
                 NoItemView()
-                    .transition(AnyTransition.opacity.animation(.easeIn(duration: 0.5)))
+                    .transition(AnyTransition.opacity.animation(.easeIn(duration: 0.2)))
             } else {
                 List {
                     ForEach(listViewModel.items) { item in
@@ -33,9 +35,28 @@ struct ListView: View {
         }
         .navigationTitle("My List 📝")
         .navigationBarItems(
-            leading: EditButton(),
-            trailing: NavigationLink("Add", destination: AddView())
+            leading: EditButton()
+//            trailing: NavigationLink("Add", destination: AddView())
         )
+        .overlay(alignment: .bottomTrailing, 
+                 content: {
+            if listViewModel.items.isEmpty{
+                NavigationLink(
+                    destination: AddView(),
+                    label:{
+                        Image(systemName: "plus")
+                            .font(.title.weight(.semibold))
+                            .padding()
+                            .background(secondaryAccentColor)
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                        
+                    }).padding(20)
+                    .shadow(color: secondaryAccentColor.opacity(0.7) , radius: 25)
+            }
+        })
+            
+        
     }
 }
 

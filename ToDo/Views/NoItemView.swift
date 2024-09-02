@@ -18,8 +18,6 @@ struct NoItemView: View {
                     .font(.title)
                     .fontWeight(.semibold)
                 Text("To add a new task click on ADD \n If you can do this task under 2 min \n then DO IT NOW ")
-//                Text("")
-//                    .fontWeight(.thin)
                     .padding(.bottom,20)
                 NavigationLink(
                     destination: AddView(),
@@ -32,7 +30,9 @@ struct NoItemView: View {
                     })
                 .padding(.horizontal, animate ? 60 : 65)
                 .shadow(color: animate ? Color.indigo.opacity(0.7) : Color.accentColor.opacity(0.6),
-                        radius: animate ? 25 : 10, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: animate ? 20 : 7)
+                        radius: animate ? 25 : 10, 
+                        x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, 
+                        y: animate ? 20 : 7)
                 .scaleEffect(animate ? 1.05 : 1)
                 .offset(y: animate ? -2 : 1)
                 
