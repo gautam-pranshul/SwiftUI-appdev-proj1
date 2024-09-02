@@ -22,9 +22,9 @@ struct AddView: View {
     var body: some View {
         TabView{
             NavigationStack{
+                Spacer()
                 HStack{
                     TextField("Get shit done!", text: $textfieldText)
-//                        .foregroundStyle(.black)
                         .padding(.horizontal)
                         .frame(height: 50)
                         .background(Color(UIColor.secondarySystemBackground))
@@ -33,17 +33,16 @@ struct AddView: View {
                     Button(action: saveOnClick,
                            label: {
                         Text("ADD")
-                            .padding(.horizontal, 10)
+                            .padding(.horizontal, 15)
                             .foregroundColor(.white)
                             .font(.headline)
-//                            .frame(maxWidth: .infinity)
+                        //                            .frame(maxWidth: .infinity)
                             .frame(height: 50)
                             .background(Color.accentColor)
                             .cornerRadius(10)
                     })
-                }
+                }.safeAreaPadding(.bottom,10)
             }.padding(.horizontal)
-            
         }
         .navigationTitle("Add another task ✏️ ")
         .alert(isPresented: $showAlert , content: getAlert)
