@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddView: View {
-    var colorTextField = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1) // color literal created because .colorLiteral was not working
+//    var colorTextField = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1) // color literal created because .colorLiteral was not working
 
     @EnvironmentObject var listViewModel : ListViewModel //observable obj for items array to update the todo
 
@@ -21,22 +21,22 @@ struct AddView: View {
     
     var body: some View {
         TabView{
-            ZStack{
-                NavigationStack{
-                    Spacer()
+            NavigationStack{
+                HStack{
                     TextField("Get shit done!", text: $textfieldText)
+//                        .foregroundStyle(.black)
                         .padding(.horizontal)
                         .frame(height: 50)
-                        .background(Color(colorTextField))
+                        .background(Color(UIColor.secondarySystemBackground))
                         .cornerRadius(10)
-                    
                     
                     Button(action: saveOnClick,
                            label: {
-                        Text("SAVE")
+                        Text("ADD")
+                            .padding(.horizontal, 10)
                             .foregroundColor(.white)
                             .font(.headline)
-                            .frame(maxWidth: .infinity)
+//                            .frame(maxWidth: .infinity)
                             .frame(height: 50)
                             .background(Color.accentColor)
                             .cornerRadius(10)
@@ -54,7 +54,7 @@ struct AddView: View {
     func saveOnClick(){
         if minLengthText(){  //checks for min length
             listViewModel.addItem(title: textfieldText)
-            presentationMode.wrappedValue.dismiss() //tells presentation mode to go back in view heirarchy ie the home page which is the list view
+            presentationMode.wrappedValue.dismiss() //tells presentation mode to go back in view heirarchy ie the home page ie listView
         }
     }
     

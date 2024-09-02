@@ -16,6 +16,7 @@ struct ListRowView: View {
             Image(systemName: item.iscomplete ? "checkmark.circle.fill" : "circle")
                 .foregroundColor(item.iscomplete ? .green : .red)
             Text(item.title)
+                .opacity(item.iscomplete ? 0.4 : 1)
             Spacer()
         }.font(.title2)
             .padding(.vertical, 6)
