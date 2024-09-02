@@ -40,7 +40,7 @@ struct ListView: View {
         )
         .overlay(alignment: .bottomTrailing, 
                  content: {
-            if listViewModel.items.isEmpty{
+            if !listViewModel.items.isEmpty{
                 NavigationLink(
                     destination: AddView(),
                     label:{
