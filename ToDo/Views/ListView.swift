@@ -49,7 +49,7 @@ struct ListView: View {
                             .padding()
                             .background(secondaryAccentColor)
                             .foregroundColor(.white)
-                            .clipShape(Circle())
+                            .clipShape(.rect(cornerRadius: 15))
                         
                     }).padding(20)
                     .shadow(color: secondaryAccentColor.opacity(0.7) , radius: 25)

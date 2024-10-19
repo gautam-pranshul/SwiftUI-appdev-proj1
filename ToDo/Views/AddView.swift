@@ -16,32 +16,41 @@ struct AddView: View {
     
     @Environment(\.presentationMode) var presentationMode // to make screen switch back to listView after we click save
     
+    let secondaryAccentColor = Color("secondaryAccentColor")
+
+    
     @State var alertTitle : String = ""
     @State var showAlert : Bool = false
+    @FocusState private var focus: Bool
     
     var body: some View {
         TabView{
             NavigationStack{
                 Spacer()
                 HStack{
-                    TextField("Get shit done!", text: $textfieldText)
-                        .padding(.horizontal)
-                        .frame(height: 50)
+                    TextField("Get shit done!", text: $textfieldText, axis: .vertical)
+                        .lineLimit(4)
+                        .padding()
                         .background(Color(UIColor.secondarySystemBackground))
-                        .cornerRadius(10)
+                        .clipShape(.rect(cornerRadius: 10))
+                        .focused($focus)
                     
                     Button(action: saveOnClick,
                            label: {
-                        Text("ADD")
-                            .padding(.horizontal, 15)
+                        Image(systemName: "plus")
+//                        Text("Add")
+                            .font(.title3.weight(.bold))
+                            .padding()
                             .foregroundColor(.white)
-                            .font(.headline)
-                        //                            .frame(maxWidth: .infinity)
-                            .frame(height: 50)
-                            .background(Color.accentColor)
-                            .cornerRadius(10)
+                            .background(secondaryAccentColor)
+                            .clipShape(.rect(cornerRadius: 15))
                     })
-                }.safeAreaPadding(.bottom,10)
+
+                }
+                .onAppear(){
+                    focus = true
+                }
+                .safeAreaPadding(.bottom,10)
             }.padding(.horizontal)
         }
         .navigationTitle("Add another task ✏️ ")
