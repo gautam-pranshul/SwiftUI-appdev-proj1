@@ -25,7 +25,7 @@ struct AddView: View {
     
     var body: some View {
         TabView{
-            NavigationStack{
+            VStack{
                 Spacer()
                 HStack{
                     TextField("Get shit done!", text: $textfieldText, axis: .vertical)
@@ -61,7 +61,7 @@ struct AddView: View {
     //SAVE BUTTON
     func saveOnClick(){
         if minLengthText(){  //checks for min length
-            listViewModel.addItem(title: textfieldText)
+            listViewModel.addItem(title: textfieldText.trimmingCharacters(in: .whitespacesAndNewlines))
             presentationMode.wrappedValue.dismiss() //tells presentation mode to go back in view heirarchy ie the home page ie listView
         }
     }
@@ -82,7 +82,7 @@ struct AddView: View {
     }
 }
 #Preview {
-    NavigationView{
+    VStack{
         AddView()
     }
 }
